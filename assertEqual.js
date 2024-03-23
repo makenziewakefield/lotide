@@ -8,3 +8,6 @@ const assertEqual = function(actual, expected) {
 
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
+assertEqual("Hello", "Hello");
+assertEqual(72, 72);
+assertEqual(15, 38);
