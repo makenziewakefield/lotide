@@ -23,24 +23,25 @@ const assertEqual = function (actual, expected) {
 // Otherwise you get back a big fat false!
 
 const eqObjects = function(object1, object2) {
+  // check to see if both objects have the same amount of keys
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
+  // loop through objects
   for (let key in object1) {
-
     let value1 = object1[key];
     let value2 = object2[key];
+    // check is the key values are arrays so they can be compared
     if (Array.isArray(value1) && Array.isArray(value2)) {
       if (!eqArrays(value1, value2)) {
         return false;
       }
-    } else if (!(key in object2) || object1[key] !== object2[key]) {
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
   return true;
 };
-
 
 
 const shirtObject = { color: "red", size: "medium" };
