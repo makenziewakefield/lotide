@@ -26,14 +26,6 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
-const assertArraysEqual = function (a1, a2) {
-  let value = eqArrays(a1, a2);
-  if (value) {
-    console.log(`✅✅✅Assertion Passed: ${a1} === ${a2}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${a1} !== ${a2}`);
-  }
-};
 
 const assertObjectsEqual = function (actual, expected) {
   const inspect = require("util").inspect;
@@ -46,15 +38,6 @@ const assertObjectsEqual = function (actual, expected) {
 };
 
 
-
-// const assertObjectsEqual = function(actual, expected) {
-//   if (actual === expected) {
-//     console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
-//   } else {
-//     console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
-//   }
-// };
-
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
-assertObjectsEqual(eqObjects(shirtObject, anotherShirtObject), true);
+assertObjectsEqual(shirtObject, anotherShirtObject), true;
