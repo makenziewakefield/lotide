@@ -1,4 +1,4 @@
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
@@ -10,7 +10,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
@@ -26,14 +26,34 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-
-const assertObjectsEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+const assertArraysEqual = function (a1, a2) {
+  let value = eqArrays(a1, a2);
+  if (value) {
+    console.log(`✅✅✅Assertion Passed: ${a1} === ${a2}`);
   } else {
-    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
+    console.log(`❌❌❌Assertion Failed: ${a1} !== ${a2}`);
   }
 };
+
+const assertObjectsEqual = function (actual, expected) {
+  const inspect = require("util").inspect;
+  let value = eqObjects(actual, expected);
+  if (value) {
+    console.log(`✅✅✅Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`❌❌❌Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
+};
+
+
+
+// const assertObjectsEqual = function(actual, expected) {
+//   if (actual === expected) {
+//     console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+//   } else {
+//     console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
+//   }
+// };
 
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
