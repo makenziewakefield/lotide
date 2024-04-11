@@ -15,18 +15,4 @@ const tail = function(arr) {
 };
 
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-
-const emptyArr = [];
-tail(emptyArr);
-assertEqual(emptyArr, 2);
-
-const smallArr = [];
-tail(smallArr);
-assertEqual(smallArr, 4);
+module.exports = tail;
