@@ -1,23 +1,5 @@
-const eqArrays = function(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+const assertArraysEqual = require('./assertArraysEqual');
 
-const assertArraysEqual = function(a1, a2) {
-  let value = eqArrays(a1, a2);
-  if (value) {
-    console.log(`✅✅✅Assertion Passed: ${a1} === ${a2}`);
-  } else {
-    console.log(`❌❌❌Assertion Failed: ${a1} !== ${a2}`);
-  }
-};
 
 const words = ["ground", "control", "to", "major", "tom"];
 
@@ -34,3 +16,5 @@ console.log(results1);
 
 const mappedWords = map(words, (word) => word[0]);
 console.log(assertArraysEqual(mappedWords, [ 'g', 'c', 't', 'm', 't' ]))
+
+module.exports = map;
