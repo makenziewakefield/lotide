@@ -1,15 +1,15 @@
 {
   "name": "@makenziewakefield/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "This is a library that acts as a miniature version of lodash, built for learning purposes.",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
+  "author": "Makenzie Wakefield",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.1",
