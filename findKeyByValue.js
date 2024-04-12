@@ -2,12 +2,12 @@ const assertEqual = require('./assertEqual');
 
 
 const findKeyByValue = function (object, value) {
-  for (const key in object) {      // loops over the object, key represents each property inside the object.
-    if (object[key] === value) {   // checks if object key (bestTVShowsByGenre[comedy]) is equal to the value that was passed into the function.
-      return key;                  // if the last line is true the function returns the key of the value that was passed.
+  for (const key in object) {
+    if (object[key] === value) {
+      return key;
     }
   }
-  return undefined                 // if there was no match found the function returns undefined.
+  return undefined
 }
 
 
